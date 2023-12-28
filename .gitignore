@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+.pnpm-store
+*.cpuprofile
+*.local
+*.log
+/.vscode/
+dist
+node_modules
+temp
+.eslintcache
