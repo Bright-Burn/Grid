@@ -1,12 +1,30 @@
 {
-  "name": "Grid",
-  "version": "1.0.0",
+  "name": "grid",
+  "version": "0.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "keywords": [],
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "app": "pnpm --filter app",
+    "build": "lerna run --scope \"@grid/*\" build",
+    "prepare": "husky install",
+    "lint": "echo \"Error: no linters\" && exit 1"
+  },
+  "engines": {
+    "node": ">=18.16.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "lerna": "^8.1.2"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": [
+      "lint"
+    ]
+  },
+  "dependencies": {
+    "husky": "^9.0.10"
+  }
 }
