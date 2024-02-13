@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:w": "tsc && vite build --watch",
+    "build:watch": "tsc && vite build --watch",
     "preview": "vite preview"
   },
   "devDependencies": {
