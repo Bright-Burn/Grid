@@ -33,4 +33,4 @@
 ## Запуск одного воркспейс:
 `pnpm --filter <workspace_name> <comand_name>`
 
-пример: `pnpm --filter grid build:w`
+пример: `pnpm --filter grid build:watch`
