@@ -1,9 +1,8 @@
 import './style.css';
-import { createGrid, GridOption, GridColumnDefs, GridRowData } from './components/grid-render';
 
 export {
-  createGrid,
-};
+  DataGrid,
+}  from './components/DataGrid.ts';
 
-export type { GridOption, GridColumnDefs, GridRowData };
+export type { Row, ColDef} from './core';
 
