@@ -1,3 +1,8 @@
 export type {ColDef, RenderColumnOptions, FilterColumnKey,SortColumnKey,SortOrder, SortConfig} from './column.ts'
 export type {Row, RenderRowOptions} from './row.ts'
 export type {RenderOptions, RenderOptionsVariants, FilterValue, RenderOptionsCompose} from './common.ts'
+export type {GridOptions} from './gridOptions.ts'
+export type {IColumnModel} from './IColumnModel.ts'
+export type {IRowModel} from './IRowModel.ts'
+export type {IPresenter} from './IPresenter.ts'
+export type {IDataStore} from './IDataStore.ts'
