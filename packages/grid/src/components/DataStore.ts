@@ -2,8 +2,8 @@ import {ColDef, IDataStore} from "../core";
 
 export class DataStore implements IDataStore {
     private static instance: DataStore;
-    rows: any[] = []
-    cols: ColDef[] = []
+    private rows: any[] = []
+    private cols: ColDef[] = []
     private constructor() { }
     public static getInstance(): DataStore {
         if (!DataStore.instance) {
