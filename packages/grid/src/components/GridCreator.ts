@@ -1,6 +1,6 @@
 import {GridOptions, IColumnModel, IPresenter, IRowModel} from "../core";
-import {ColumnModel} from "./ColumnModel.ts";
-import {RowModel} from "./RowModel.ts";
+import {ColumnModel} from "./columns/ColumnModel.ts";
+import {RowModel} from "./rows/RowModel.ts";
 import {Presenter} from "./Presenter.ts";
 import {DataStore} from "./DataStore.ts";
 
@@ -14,19 +14,20 @@ class GridCreator {
     columnModel: IColumnModel
     presenter: IPresenter
     constructor(root: HTMLElement, gridOptions: GridOptions) {
-        this.presenter = new Presenter(root)
 
         const dataStore = DataStore.getInstance()
         dataStore.setRows(gridOptions.rowData)
         dataStore.setCols(gridOptions.columnDef)
+        this.presenter = new Presenter(dataStore, root)
         this.rowModel = new RowModel(dataStore, this.presenter)
         this.columnModel = new ColumnModel(dataStore, this.presenter)
-
     }
 
 
     render() {
         this.presenter.render()
+        setTimeout(() => this.columnModel.sort('age', "asc"),3000)
+
     }
 
 }

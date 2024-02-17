@@ -1,18 +1,19 @@
-import {Row} from "./row.ts";
-import {FilterValue, RenderOptions} from "./common.ts";
+
+import { RenderOptions} from "./common.ts";
 
 
 export type RenderColumnOptionsVariants = 'column';
 
-export type ColDef = {
-    title: string;
-    key: string;
-    renderOptions?: RenderColumnOptions;
-    width?: number;
-    customRender?: (row: Row) => HTMLElement | string;
-    customSort?: (rows: Row[]) => Row[];
-    customFilter?: (filterValue: FilterValue, rows: Row[]) => Row[];
-};
+export type ColDef = Record<string, any>
+// export type ColDef = {
+//     title: string;
+//     key: string;
+//     renderOptions?: RenderColumnOptions;
+//     width?: number;
+//     customRender?: (row: Row) => HTMLElement | string;
+//     customSort?: (rows: Row[]) => Row[];
+//     customFilter?: (filterValue: FilterValue, rows: Row[]) => Row[];
+// };
 
 export type RenderColumnOptions = RenderOptions & {
     type: RenderColumnOptionsVariants;
