@@ -1,7 +1,7 @@
 import { IColumnModel, IDataStore} from "../../core";
 
 export class ColumnModel implements IColumnModel {
-    dataStore: IDataStore
+    private dataStore: IDataStore
     constructor(dataStore: IDataStore) {
         this.dataStore = dataStore
     }
@@ -10,5 +10,7 @@ export class ColumnModel implements IColumnModel {
         rows.sort((a,b) => b[name]-a[name])
         this.dataStore.setRows(rows)
     }
-
+    getCols() {
+        return this.dataStore.getCols()
+    }
 }

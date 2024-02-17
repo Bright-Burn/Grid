@@ -18,9 +18,10 @@ class GridCreator {
         const dataStore = DataStore.getInstance()
         dataStore.setRows(gridOptions.rowData)
         dataStore.setCols(gridOptions.columnDef)
-        this.presenter = new Presenter(dataStore, root)
-        this.rowModel = new RowModel(dataStore, this.presenter)
-        this.columnModel = new ColumnModel(dataStore, this.presenter)
+        this.rowModel = new RowModel(dataStore)
+        this.columnModel = new ColumnModel(dataStore)
+        this.presenter = new Presenter(root,this.columnModel, this.rowModel )
+
     }
 
 

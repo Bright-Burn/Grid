@@ -1,6 +1,6 @@
-import {IDataStore} from "./IDataStore.ts";
+import {ColDef} from "./column.ts";
 
 export interface IColumnModel {
-    dataStore: IDataStore
+    getCols: () => ColDef[]
     sort: (name: string, type: 'asc' | 'desc') => void
 }

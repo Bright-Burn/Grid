@@ -1,11 +1,13 @@
 import {IDataStore, IRowModel} from "../../core";
 
 export class RowModel implements IRowModel{
-    dataStore: IDataStore
+    private dataStore: IDataStore
     constructor(dataStore: IDataStore) {
         this.dataStore = dataStore
     }
-
+    getRows() {
+        return this.dataStore.getCols()
+    }
 
 
 }

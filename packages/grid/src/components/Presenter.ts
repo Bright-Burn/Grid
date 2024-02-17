@@ -1,18 +1,20 @@
-import {ColDef, IDataStore, IPresenter} from "../core";
+import {ColDef, IColumnModel, IPresenter, IRowModel} from "../core";
 import './style.css'
 import {ColumnUtils} from "./columns/utils.ts";
 export class Presenter implements IPresenter {
     root: HTMLElement
-    dataStore: IDataStore
     columnsUtil: ColumnUtils
-    constructor(dataStore: IDataStore, root: HTMLElement) {
+    columnModel: IColumnModel
+    rowModel: IRowModel
+    constructor(root: HTMLElement, columnModel: IColumnModel, rowModel: IRowModel) {
         this.root = root
-        this.dataStore = dataStore
         this.columnsUtil = new ColumnUtils()
+        this.columnModel = columnModel
+        this.rowModel = rowModel
     }
     render() {
         this.root.innerHTML = ''
-        const cols = this.dataStore.getCols()
+        const cols = this.rowModel.getRows()
         const grid = this.createElement("div")
         grid.setAttribute('class', 'container-column')
 
@@ -54,8 +56,8 @@ export class Presenter implements IPresenter {
         htmlElem.textContent = col.title
     }
     private createRows() {
-        const cols = this.dataStore.getCols()
-        const rows = this.dataStore.getRows()
+        const cols = this.columnModel.getCols()
+        const rows = this.rowModel.getRows()
         const rowsHtml = rows.map(rowEl => {
             const row = this.createRow()
             cols.forEach(colEl => {
