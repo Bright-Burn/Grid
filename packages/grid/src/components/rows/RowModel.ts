@@ -6,7 +6,7 @@ export class RowModel implements IRowModel{
         this.dataStore = dataStore
     }
     getRows() {
-        return this.dataStore.getCols()
+        return this.dataStore.getRows()
     }
 
 

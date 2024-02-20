@@ -14,7 +14,7 @@ export class Presenter implements IPresenter {
     }
     render() {
         this.root.innerHTML = ''
-        const cols = this.rowModel.getRows()
+        const cols = this.columnModel.getCols()
         const grid = this.createElement("div")
         grid.setAttribute('class', 'container-column')
 

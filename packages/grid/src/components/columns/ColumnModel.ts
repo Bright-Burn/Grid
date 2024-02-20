@@ -5,9 +5,12 @@ export class ColumnModel implements IColumnModel {
     constructor(dataStore: IDataStore) {
         this.dataStore = dataStore
     }
-    sort(name: string) {
+    sort(name: string, type: 'asc' | 'desc') {
         const rows = this.dataStore.getRows()
-        rows.sort((a,b) => b[name]-a[name])
+        if(type === 'asc' )
+            rows.sort((a,b) => b[name]-a[name])
+        else
+            rows.sort((a,b) => a[name] - b[name])
         this.dataStore.setRows(rows)
     }
     getCols() {

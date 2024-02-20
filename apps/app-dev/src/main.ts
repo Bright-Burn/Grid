@@ -125,10 +125,25 @@ import {createGrid} from '@grid/grid'
 const root = document.querySelector<HTMLElement>('#app');
 const gridOptions = {
   columnDef: [{id: 1, name: 'name', title: 'имя', className: 'border'}, {id: 2, name: 'age', title: 'возраст', className: 'border'}],
-  rowData: [{id: 1, name: 'петя', age: 21},{id: 2, name: 'боб', age: 24}]
+  rowData: [{id: 1, name: 'петя', age: 21},{id: 2, name: 'боб', age: 24}, {id: 2, name: 'алёша', age: 18}]
 }
 console.log(root)
 if(root) {
   const api = createGrid(root, gridOptions)
+  window.API = api
+  const btn = document.createElement('button')
+  btn.textContent = 'click'
+  btn.addEventListener('click', () => {
+    api.columnModel.sort('age', 'desc')
+    api.render()
+  })
+  document.body.appendChild(btn)
 
+  const btn2 = document.createElement('button')
+  btn2.textContent = 'click'
+  btn2.addEventListener('click', () => {
+    api.columnModel.sort('age', 'asc')
+    api.render()
+  })
+  document.body.appendChild(btn2)
 }

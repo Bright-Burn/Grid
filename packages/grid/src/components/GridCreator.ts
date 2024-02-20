@@ -27,8 +27,6 @@ class GridCreator {
 
     render() {
         this.presenter.render()
-        setTimeout(() => this.columnModel.sort('age', "asc"),3000)
-
     }
 
 }
