@@ -1,3 +1,3 @@
-import { setupTitle } from "./title";
+import { setupTitle } from './title'
 
-export { setupTitle };
+export { setupTitle }

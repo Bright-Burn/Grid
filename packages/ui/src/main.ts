@@ -1,4 +1,4 @@
-import { setupTitle } from "./component/title";
-import { setupCounter } from "./component/counter";
+import { setupTitle } from './component/title'
+import { setupCounter } from './component/counter'
 
-export { setupTitle, setupCounter };
+export { setupTitle, setupCounter }

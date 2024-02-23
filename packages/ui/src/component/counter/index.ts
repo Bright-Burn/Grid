@@ -1,5 +1,3 @@
-import { setupCounter } from "./counter";
+import { setupCounter } from './counter'
 
-export {
-    setupCounter
-}
+export { setupCounter }

@@ -1,12 +1,12 @@
-export type GridCellValue = string; // TODO: or | number | null | boolean;
+export type GridCellValue = string // TODO: or | number | null | boolean;
 
-export type GridRowData = Record<string, GridCellValue>;
+export type GridRowData = Record<string, GridCellValue>
 
 export type GridColumnDefs = {
-    field: string;
-};
+  field: string
+}
 
 export type GridOption = {
-    rowData: GridRowData[],
-    columnDefs: GridColumnDefs[],
+  rowData: GridRowData[]
+  columnDefs: GridColumnDefs[]
 }
