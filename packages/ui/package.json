@@ -8,7 +8,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "pnpm lint:code && pnpm lint:style && pnpm lint:other",
+    "lint:fix": "pnpm lint:code --fix && pnpm lint:style --fix && pnpm prettier --write",
+    "lint:code": "eslint --report-unused-disable-directives",
+    "lint:style": "pnpm exec stylelint src/**/*.css",
+    "lint:other": "npm run prettier --check",
+    "prettier": "prettier '**/*.{ts,md,json}'",
+    "type-check": "tsc --skipLibCheck --noEmit"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
