@@ -1,8 +1,6 @@
-import { createGrid } from "./gridRender";
-import { GridOption, GridColumnDefs, GridRowData } from "./type";
+import { createGrid } from './gridRender'
+import { GridOption, GridColumnDefs, GridRowData } from './type'
 
-export type {
-    GridOption, GridColumnDefs, GridRowData
-}
+export type { GridOption, GridColumnDefs, GridRowData }
 
 export { createGrid }

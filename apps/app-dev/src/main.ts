@@ -1,9 +1,10 @@
-import './style.css';
+import { GridOption, createGrid } from '@grid/grid'
+import './style.css'
 // TODO: временное решение со стилями из packages
-import "@grid/grid/dist/style.css";
-import "@grid/ui/dist/style.css";
-import { setupCounter, setupTitle } from '@grid/ui';
-import { createGrid, GridOption } from "@grid/grid";
+import '@grid/grid/dist/style.css'
+import { setupCounter, setupTitle } from '@grid/ui'
+import '@grid/ui/dist/style.css'
+
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -17,18 +18,13 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 const gridOptions: GridOption = {
   rowData: [
-    { make: 'Tesla', model: 'Model Y', price: "64950", electric: "yes" },
-    { make: 'Ford', model: 'F-Series', price: "33850", electric: "no" },
-    { make: 'Toyota', model: 'Corolla', price: "29600", electric: "no" },
+    { make: 'Tesla', model: 'Model Y', price: '64950', electric: 'yes' },
+    { make: 'Ford', model: 'F-Series', price: '33850', electric: 'no' },
+    { make: 'Toyota', model: 'Corolla', price: '29600', electric: 'no' },
   ],
-  columnDefs: [
-    { field: 'make' },
-    { field: 'model' },
-    { field: 'price' },
-    { field: 'electric' },
-  ],
-};
+  columnDefs: [{ field: 'make' }, { field: 'model' }, { field: 'price' }, { field: 'electric' }],
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
-setupTitle(document.querySelector<HTMLDivElement>('#title')!, 'GRID start');
-createGrid(document.querySelector<HTMLDivElement>('#grid')!, gridOptions);
+setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+setupTitle(document.querySelector<HTMLDivElement>('#title')!, 'GRID start')
+createGrid(document.querySelector<HTMLDivElement>('#grid')!, gridOptions)

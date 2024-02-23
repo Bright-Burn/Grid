@@ -1,9 +1,6 @@
-import './style.css';
-import { createGrid, GridOption, GridColumnDefs, GridRowData } from './components/grid-render';
+import './style.css'
+import { createGrid, GridOption, GridColumnDefs, GridRowData } from './components/grid-render'
 
-export {
-  createGrid,
-};
+export { createGrid }
 
-export type { GridOption, GridColumnDefs, GridRowData };
-
+export type { GridOption, GridColumnDefs, GridRowData }
