@@ -10,14 +10,20 @@
     "app": "pnpm --filter app",
     "build": "lerna run --scope \"@grid/*\" build",
     "prepare": "husky install",
-    "lint": "echo \"Error: no linters\" && exit 1"
+    "lint": "lerna run --scope \"@grid/*\" lint",
+    "lint:fix": "lerna run --scope \"@grid/*\" lint:fix",
+    "type-check": "lerna run --scope \"@grid/*\" type-check"
   },
   "engines": {
     "node": ">=18.16.1"
   },
   "devDependencies": {
+    "@grid/configs": "link:packages\\configs",
     "@types/node": "^20.11.16",
-    "lerna": "^8.1.2"
+    "eslint": "^8.56.0",
+    "lerna": "^8.1.2",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.1"
   },
   "lint-staged": {
     "**/*.{js,ts}": [
